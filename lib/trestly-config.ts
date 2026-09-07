@@ -1,4 +1,4 @@
-import { TrestlyConfig } from './trestly-sdk';
+import type { TrestlyConfig } from "./sdk/types";
 
 // Trestly configuration from environment variables
 export const trestlyConfig: TrestlyConfig = {
