@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { isConnected, getPublicKey, signTransaction } from '@stellar/freighter-api';
+import { getAddress, signTransaction, isConnected } from '@stellar/freighter-api';
 
 interface WalletContextType {
   address: string | null;
@@ -24,11 +24,13 @@ export function WalletProvider({ children }: { children: ReactNode }) {
 
   const checkConnection = async () => {
     try {
-      const connected = await isConnected();
-      if (connected) {
-        const publicKey = await getPublicKey();
-        setAddress(publicKey);
-        setConnected(true);
+      const { isConnected: walletConnected } = await isConnected();
+      if (walletConnected) {
+        const { address: walletAddress, error } = await getAddress();
+        if (!error && walletAddress) {
+          setAddress(walletAddress);
+          setConnected(true);
+        }
       }
     } catch (error) {
       console.error('Error checking wallet connection:', error);
@@ -37,8 +39,11 @@ export function WalletProvider({ children }: { children: ReactNode }) {
 
   const connect = async () => {
     try {
-      const publicKey = await getPublicKey();
-      setAddress(publicKey);
+      const { address: walletAddress, error } = await getAddress();
+      if (error) {
+        throw new Error(error.message || 'Failed to connect wallet');
+      }
+      setAddress(walletAddress);
       setConnected(true);
     } catch (error) {
       console.error('Error connecting wallet:', error);
@@ -57,11 +62,16 @@ export function WalletProvider({ children }: { children: ReactNode }) {
     }
     
     try {
-      const signedXdr = await signTransaction(xdr, {
+      const { signedTxXdr, error } = await signTransaction(xdr, {
         networkPassphrase: opts?.networkPassphrase || 'Test SDF Network ; September 2015',
-        accountToSign: address || undefined,
+        address: address || undefined,
       });
-      return signedXdr;
+      
+      if (error) {
+        throw new Error(error.message || 'Failed to sign transaction');
+      }
+      
+      return signedTxXdr;
     } catch (error) {
       console.error('Error signing transaction:', error);
       throw error;
