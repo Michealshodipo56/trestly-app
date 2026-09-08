@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from 'react';
 import { useWallet } from '../lib/wallet-context';
-import { getPayment, raiseDispute, release, resolveDispute } from '../lib/sdk/client';
+import { getPayment, raiseDispute, release, resolveDispute } from 'trestly-sdk';
 import { trestlyConfig } from '../lib/trestly-config';
-import type { EscrowedPayment } from '../lib/sdk/types';
+import type { EscrowedPayment } from 'trestly-sdk';
 
 interface PaymentStatusCardProps {
   paymentId: number;

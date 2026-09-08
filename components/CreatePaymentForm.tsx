@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useWallet } from '../lib/wallet-context';
-import { createPayment } from '../lib/sdk/client';
+import { createPayment } from 'trestly-sdk';
 import { trestlyConfig } from '../lib/trestly-config';
 
 export default function CreatePaymentForm() {
