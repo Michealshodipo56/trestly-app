@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trestly
 
-## Getting Started
+Escrow for x402 payments on Stellar. This repo is the Next.js frontend —
+connect a wallet, create an escrowed payment, manage disputes.
 
-First, run the development server:
+**Live:** [trestly.vercel.app](https://trestly.vercel.app) · **Docs:** [docs/](docs/README.md)
+
+Trestly adds a dispute-aware escrow layer to x402 payments: instead of
+settling instantly with no way back if a service fails to deliver, funds are
+held in a Soroban contract and release automatically after a dispute
+window — or route back to the buyer if a dispute is raised in time.
+
+## The three repos
+
+| Repo | What it is |
+|---|---|
+| [trestly-contract](https://github.com/Michealshodipo56/trestly-contract) | The Soroban smart contract |
+| [trestly-sdk](https://github.com/Michealshodipo56/trestly-sdk) | TypeScript client library |
+| **trestly-app** (this repo) | The Next.js frontend |
+
+Deployed testnet contract:
+[`CBL4JVIPQBSTGUUVQRZXHDCGCVDPN3N4MHJKKY4MZSM2ZBILIIUJR6WD`](https://stellar.expert/explorer/testnet/contract/CBL4JVIPQBSTGUUVQRZXHDCGCVDPN3N4MHJKKY4MZSM2ZBILIIUJR6WD)
+
+## Getting started
 
 ```bash
+npm install
+cp .env.example .env.local   # fill in NEXT_PUBLIC_CONTRACT_ID, etc.
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). You'll need the
+[Freighter](https://www.freighter.app/) extension (set to Testnet) and some
+free testnet XLM from [Friendbot](https://friendbot.stellar.org) to actually
+create a payment.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Full walkthrough: [docs/getting-started.md](docs/getting-started.md).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Scripts
 
-## Learn More
+```bash
+npm run dev      # local dev server
+npm run build    # production build
+npm run lint     # eslint
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Documentation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The [`docs/`](docs/README.md) directory is the source for this project's
+GitBook documentation:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [Architecture](docs/architecture.md) — how the contract, SDK, and this app fit together
+- [Getting Started](docs/getting-started.md)
+- [Contract Reference](docs/contract-reference.md)
+- [SDK Reference](docs/sdk-reference.md)
+- [Deployment](docs/deployment.md)
+- [Security](docs/security.md)
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+[MIT](LICENSE)
