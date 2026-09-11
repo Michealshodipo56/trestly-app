@@ -25,10 +25,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-slate-100/80 bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2.5">
-          <TrestlyLogo className="h-8 w-8" />
-          <span className="text-lg font-bold tracking-tight text-slate-900">
-            Trestly
-          </span>
+          <TrestlyLogo className="h-8 w-8" showText={true} />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">

@@ -17,6 +17,15 @@ export const metadata: Metadata = {
   title: "Trestly — Escrow for x402 Payments on Stellar",
   description:
     "Trestly adds a dispute-aware escrow layer to x402 payments on Stellar. Agents pay. Services deliver. Funds settle only when the window closes.",
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/icon', type: 'image/png', sizes: '32x32' },
+    ],
+    apple: [
+      { url: '/apple-icon', sizes: '180x180', type: 'image/png' },
+    ],
+  },
   openGraph: {
     title: "Trestly — Escrow for x402 Payments on Stellar",
     description:

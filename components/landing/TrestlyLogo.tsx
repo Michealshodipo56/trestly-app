@@ -1,29 +1,59 @@
 export function TrestlyLogo({
   className = 'h-8 w-8',
+  showText = false,
 }: {
   className?: string;
+  showText?: boolean;
 }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 32 32"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <rect width="32" height="32" rx="7" fill="#2563EB" />
-      <path
-        d="M7.5 9.5c0-.83.67-1.5 1.5-1.5h8.2c2.54 0 4.6 2.06 4.6 4.6v1.15h-5.35c-1.77 0-3.2 1.43-3.2 3.2V23.5H9c-.83 0-1.5-.67-1.5-1.5V9.5z"
-        fill="white"
-      />
-      <path
-        d="M14.2 15.2H23c.99 0 1.8.81 1.8 1.8V22c0 1.55-1.25 2.8-2.8 2.8h-5.1c-.99 0-1.8-.81-1.8-1.8v-5.1c0-1.49 1.21-2.7 2.7-2.7z"
-        fill="#BFDBFE"
-      />
-      <path
-        d="M16.4 17.6h5.6v5.6h-2.55v-3.05H16.4V17.6z"
-        fill="#2563EB"
-      />
-    </svg>
+    <div className="flex items-center gap-2">
+      <svg
+        className={className}
+        viewBox="0 0 100 100"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="Trestly Logo"
+      >
+        <defs>
+          <linearGradient id="trestlyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#60A5FA" />
+            <stop offset="100%" stopColor="#A78BFA" />
+          </linearGradient>
+        </defs>
+        
+        {/* Top horizontal bar (T top) */}
+        <path 
+          d="M 18 18 L 18 28 L 82 28 L 82 18 C 82 18 77 23 72 23 L 28 23 C 23 23 18 18 18 18 Z" 
+          fill="url(#trestlyGradient)"
+        />
+        
+        {/* Vertical stem (T stem) */}
+        <rect 
+          x="45" 
+          y="28" 
+          width="10" 
+          height="54" 
+          rx="1"
+          fill="url(#trestlyGradient)"
+        />
+        
+        {/* Left shield panel */}
+        <path 
+          d="M 18 33 L 18 70 C 18 72 22 78 32 82 L 42 42 L 18 33 Z" 
+          fill="url(#trestlyGradient)"
+        />
+        
+        {/* Right shield panel */}
+        <path 
+          d="M 82 33 L 58 42 L 68 82 C 78 78 82 72 82 70 L 82 33 Z" 
+          fill="url(#trestlyGradient)"
+        />
+      </svg>
+      {showText && (
+        <span className="text-xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+          Trestly
+        </span>
+      )}
+    </div>
   );
 }
