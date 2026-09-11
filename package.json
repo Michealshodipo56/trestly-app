@@ -13,7 +13,7 @@
     "next": "16.3.4",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "trestly-sdk": "file:../trestly-sdk"
+    "trestly-sdk": "file:vendor/trestly-sdk"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

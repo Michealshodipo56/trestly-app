@@ -13,6 +13,15 @@ interface WalletContextType {
 
 const WalletContext = createContext<WalletContextType | undefined>(undefined);
 
+// freighter-api's calls never resolve if the extension isn't installed —
+// there's no built-in timeout, so a missing extension would otherwise hang forever.
+function withTimeout<T>(promise: Promise<T>, ms: number, message: string): Promise<T> {
+  return Promise.race([
+    promise,
+    new Promise<T>((_, reject) => setTimeout(() => reject(new Error(message)), ms)),
+  ]);
+}
+
 export function WalletProvider({ children }: { children: ReactNode }) {
   const [address, setAddress] = useState<string | null>(null);
   const [connected, setConnected] = useState(false);
@@ -24,7 +33,11 @@ export function WalletProvider({ children }: { children: ReactNode }) {
 
   const checkConnection = async () => {
     try {
-      const { isConnected: walletConnected } = await isConnected();
+      const { isConnected: walletConnected } = await withTimeout(
+        isConnected(),
+        5000,
+        'Timed out waiting for Freighter'
+      );
       if (walletConnected) {
         const { address: walletAddress, error } = await getAddress();
         if (!error && walletAddress) {
@@ -39,9 +52,18 @@ export function WalletProvider({ children }: { children: ReactNode }) {
 
   const connect = async () => {
     try {
-      const { address: walletAddress, error } = await getAddress();
+      const { address: walletAddress, error } = await withTimeout(
+        getAddress(),
+        10000,
+        'Freighter did not respond. Please make sure the extension is installed and unlocked.'
+      );
       if (error) {
         throw new Error(error.message || 'Failed to connect wallet');
+      }
+      // freighter-api resolves with an empty address (no error) when the
+      // extension isn't installed or no wallet is unlocked — treat that as failure too.
+      if (!walletAddress) {
+        throw new Error('No wallet address returned. Please make sure Freighter is installed and unlocked.');
       }
       setAddress(walletAddress);
       setConnected(true);
