@@ -2,6 +2,9 @@
 
 # dependencies
 /node_modules
+# npm nests a node_modules under file: deps that declare their own
+# dependencies (e.g. vendor/trestly-sdk) -- ignore those too, wherever they land.
+**/node_modules
 /.pnp
 .pnp.*
 .yarn/*
