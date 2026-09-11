@@ -1,7 +1,7 @@
 'use client';
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { getAddress, signTransaction, isConnected } from '@stellar/freighter-api';
+import { getAddress, requestAccess, signTransaction, isConnected } from '@stellar/freighter-api';
 
 interface WalletContextType {
   address: string | null;
@@ -52,18 +52,22 @@ export function WalletProvider({ children }: { children: ReactNode }) {
 
   const connect = async () => {
     try {
+      // getAddress() only returns a key if this site already has permission —
+      // it never prompts. requestAccess() is the call that actually pops open
+      // Freighter's "connect this site" dialog, which is what a fresh Connect
+      // Wallet click needs to trigger.
       const { address: walletAddress, error } = await withTimeout(
-        getAddress(),
+        requestAccess(),
         10000,
         'Freighter did not respond. Please make sure the extension is installed and unlocked.'
       );
       if (error) {
         throw new Error(error.message || 'Failed to connect wallet');
       }
-      // freighter-api resolves with an empty address (no error) when the
-      // extension isn't installed or no wallet is unlocked — treat that as failure too.
+      // freighter-api resolves with an empty address (no error) if the user
+      // declines the connection request — treat that as failure too.
       if (!walletAddress) {
-        throw new Error('No wallet address returned. Please make sure Freighter is installed and unlocked.');
+        throw new Error('No wallet address returned. Please make sure Freighter is installed and unlocked, and approve the connection request.');
       }
       setAddress(walletAddress);
       setConnected(true);
