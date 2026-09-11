@@ -26,11 +26,6 @@ export function WalletProvider({ children }: { children: ReactNode }) {
   const [address, setAddress] = useState<string | null>(null);
   const [connected, setConnected] = useState(false);
 
-  useEffect(() => {
-    // Check if wallet is already connected on mount
-    checkConnection();
-  }, []);
-
   const checkConnection = async () => {
     try {
       const { isConnected: walletConnected } = await withTimeout(
@@ -49,6 +44,15 @@ export function WalletProvider({ children }: { children: ReactNode }) {
       console.error('Error checking wallet connection:', error);
     }
   };
+
+  useEffect(() => {
+    // Check if wallet is already connected on mount. Standard effect-driven
+    // sync with an external system (the browser extension); checkConnection
+    // sets state before its first await, which the newer React Compiler
+    // purity rule flags even for this documented effect pattern.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    checkConnection();
+  }, []);
 
   const connect = async () => {
     try {

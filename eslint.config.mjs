@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Vendored build output, not source we maintain directly.
+    "vendor/**",
   ]),
 ]);
 

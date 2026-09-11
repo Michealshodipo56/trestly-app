@@ -31,6 +31,11 @@ export default function PaymentStatusCard({ paymentId }: PaymentStatusCardProps)
   };
 
   useEffect(() => {
+    // Standard fetch-on-mount/prop-change pattern; loadPayment sets loading
+    // state synchronously before its first await, which the newer React
+    // Compiler-oriented lint rule flags even though this is the pattern
+    // react.dev itself documents for effect-driven data fetching.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     loadPayment();
   }, [paymentId]);
 
@@ -110,6 +115,11 @@ export default function PaymentStatusCard({ paymentId }: PaymentStatusCardProps)
     return <div className="p-6 bg-white rounded-lg shadow">Payment not found</div>;
   }
 
+  // Date.now() during render is flagged by the newer React purity rule (relevant
+  // to concurrent re-rendering), but this value only needs to be current as of
+  // whenever this component last rendered (e.g. after the explicit Refresh
+  // button below) -- no ticking clock is needed here.
+  // eslint-disable-next-line react-hooks/purity
   const now = BigInt(Math.floor(Date.now() / 1000));
   const windowClosed = now >= payment.disputeWindowEnd;
   const canRaiseDispute = !payment.resolved && !payment.disputed && !windowClosed && address === payment.payer;
