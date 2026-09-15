@@ -2,9 +2,9 @@
 
 Trestly is split across three repos — see [System Architecture](../introduction/architecture.md):
 
-- [`trestly-contract`](https://github.com/Michealshodipo56/trestly-contract) — the Soroban contract (Rust)
-- [`trestly-sdk`](https://github.com/Michealshodipo56/trestly-sdk) — the TypeScript client
-- [`trestly-app`](https://github.com/Michealshodipo56/trestly-app) — the frontend
+- [`trestly-contract`](https://github.com/Trestly-team/trestly-contract) — the Soroban contract (Rust)
+- [`trestly-sdk`](https://github.com/Trestly-team/trestly-sdk) — the TypeScript client
+- [`trestly-app`](https://github.com/Trestly-team/trestly-app) — the frontend
 
 This documentation lives in `trestly-app/docs/` (GitBook source). Find the right repo for your code change before opening a PR — each has its own `CONTRIBUTING.md`, CI, and issue tracker.
 
@@ -12,9 +12,9 @@ This documentation lives in `trestly-app/docs/` (GitBook source). Find the right
 
 Check each repo's Issues tab:
 
-- [trestly-contract issues](https://github.com/Michealshodipo56/trestly-contract/issues)
-- [trestly-sdk issues](https://github.com/Michealshodipo56/trestly-sdk/issues)
-- [trestly-app issues](https://github.com/Michealshodipo56/trestly-app/issues)
+- [trestly-contract issues](https://github.com/Trestly-team/trestly-contract/issues)
+- [trestly-sdk issues](https://github.com/Trestly-team/trestly-sdk/issues)
+- [trestly-app issues](https://github.com/Trestly-team/trestly-app/issues)
 
 ## Branch naming
 

@@ -4,9 +4,9 @@ Trestly is split across three repositories, each with a single responsibility:
 
 | Repo | Role |
 |---|---|
-| [`trestly-contract`](https://github.com/Michealshodipo56/trestly-contract) | The Soroban smart contract (Rust). Source of truth for every payment's state. |
-| [`trestly-sdk`](https://github.com/Michealshodipo56/trestly-sdk) | TypeScript client that builds, simulates, signs, and submits contract calls. |
-| [`trestly-app`](https://github.com/Michealshodipo56/trestly-app) | The Next.js frontend — reference UI and demo. |
+| [`trestly-contract`](https://github.com/Trestly-team/trestly-contract) | The Soroban smart contract (Rust). Source of truth for every payment's state. |
+| [`trestly-sdk`](https://github.com/Trestly-team/trestly-sdk) | TypeScript client that builds, simulates, signs, and submits contract calls. |
+| [`trestly-app`](https://github.com/Trestly-team/trestly-app) | The Next.js frontend — reference UI and demo. |
 
 ## Topology
 

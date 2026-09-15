@@ -1,6 +1,6 @@
 # SDK Reference
 
-Source: [trestly-sdk](https://github.com/Michealshodipo56/trestly-sdk)
+Source: [trestly-sdk](https://github.com/Trestly-team/trestly-sdk)
 
 `trestly-sdk` is a TypeScript client library that wraps the Trestly contract — it builds, simulates, signs (via a callback you provide, so it is not tied to any specific wallet), and submits transactions.
 
@@ -9,13 +9,13 @@ Source: [trestly-sdk](https://github.com/Michealshodipo56/trestly-sdk)
 `trestly-sdk` is not yet published to npm (see [System Architecture](../introduction/architecture.md)). Until then:
 
 ```bash
-npm install "git+https://github.com/Michealshodipo56/trestly-sdk.git#main"
+npm install "git+https://github.com/Trestly-team/trestly-sdk.git#main"
 ```
 
 or clone it and build it yourself:
 
 ```bash
-git clone https://github.com/Michealshodipo56/trestly-sdk.git
+git clone https://github.com/Trestly-team/trestly-sdk.git
 cd trestly-sdk
 npm install && npm run build
 ```
@@ -119,7 +119,7 @@ signTransaction: async (xdr) => {
 }
 ```
 
-This is exactly the pattern [`scripts/e2e-testnet.cjs`](https://github.com/Michealshodipo56/trestly-contract/blob/main/scripts/e2e-testnet.cjs) in trestly-contract uses to prove the full lifecycle end-to-end without a browser at all.
+This is exactly the pattern [`scripts/e2e-testnet.cjs`](https://github.com/Trestly-team/trestly-contract/blob/main/scripts/e2e-testnet.cjs) in trestly-contract uses to prove the full lifecycle end-to-end without a browser at all.
 
 ## A note on ScVal types
 

@@ -26,4 +26,4 @@ Trestly runs against **Soroban Testnet** in v1. The Soroban RPC endpoint is `htt
 
 ## Source
 
-[`trestly-contract`](https://github.com/Michealshodipo56/trestly-contract) — `contracts/trestly/src/lib.rs`
+[`trestly-contract`](https://github.com/Trestly-team/trestly-contract) — `contracts/trestly/src/lib.rs`

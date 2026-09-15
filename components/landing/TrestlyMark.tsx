@@ -1,0 +1,66 @@
+type TrestlyMarkProps = {
+  className?: string;
+  label?: string;
+};
+
+export function TrestlyMark({ className, label }: TrestlyMarkProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 343 303"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label={label}
+      role={label ? 'img' : undefined}
+    >
+      <defs>
+        <linearGradient id="trestly-top" x1="20" y1="16" x2="322" y2="116" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#39B0F7" />
+          <stop offset="0.48" stopColor="#2568F1" />
+          <stop offset="1" stopColor="#2119B9" />
+        </linearGradient>
+        <linearGradient id="trestly-left" x1="41" y1="104" x2="164" y2="290" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#23B5F4" />
+          <stop offset="0.52" stopColor="#245CE2" />
+          <stop offset="1" stopColor="#182EB4" />
+        </linearGradient>
+        <linearGradient id="trestly-right" x1="180" y1="83" x2="302" y2="294" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#161269" />
+          <stop offset="0.48" stopColor="#2334C3" />
+          <stop offset="1" stopColor="#2616A8" />
+        </linearGradient>
+        <linearGradient id="trestly-accent" x1="99" y1="181" x2="257" y2="272" gradientUnits="userSpaceOnUse">
+          <stop stopColor="#1D42C7" />
+          <stop offset="1" stopColor="#3818B9" />
+        </linearGradient>
+      </defs>
+
+      <rect width="343" height="303" fill="white" />
+      <path
+        d="M51 16H291C308.1 16 322 29.9 322 47V85C322 102.1 308.1 116 291 116H203C185.3 116 171 130.3 171 148V108C171 90.3 154.7 76 137 76H51C33.9 76 20 62.1 20 45.9C20 29.4 33.9 16 51 16Z"
+        fill="url(#trestly-top)"
+      />
+      <path
+        d="M41 104L154 160.6V290.8C154 300.3 147.1 304.6 139.4 298.8L69.6 246.2C51.8 232.8 41 211.7 41 189.5V104Z"
+        fill="url(#trestly-left)"
+      />
+      <path
+        d="M189 160.6L299 104V189.5C299 211.7 288.2 232.8 270.4 246.2L203.6 298.8C195.9 304.6 189 300.3 189 290.8V160.6Z"
+        fill="url(#trestly-right)"
+      />
+      <path
+        d="M203 77L288.6 65.5C307.4 63 322 72.4 322 88.3V85C322 102.1 308.1 116 291 116H279.5L203 77Z"
+        fill="#191579"
+      />
+      <path
+        d="M154 162.5L91 199C85.5 202.2 82 208.2 82 214.5V255.5L139.4 298.8C147.1 304.6 154 300.3 154 290.8V162.5Z"
+        fill="url(#trestly-accent)"
+      />
+      <path
+        d="M189 162.5L252 199C257.5 202.2 261 208.2 261 214.5V255.5L203.6 298.8C195.9 304.6 189 300.3 189 290.8V162.5Z"
+        fill="url(#trestly-accent)"
+      />
+      <path d="M203 77L290 105L203 150Z" fill="white" />
+    </svg>
+  );
+}

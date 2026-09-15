@@ -7,12 +7,12 @@ import { TrestlyLogo } from './TrestlyLogo';
 const NAV_LINKS = [
   { href: '#protocol', label: 'Protocol' },
   {
-    href: 'https://github.com/Michealshodipo56/trestly-sdk#readme',
+    href: 'https://github.com/Trestly-team/trestly-sdk#readme',
     label: 'Docs',
     external: true,
   },
   {
-    href: 'https://github.com/Michealshodipo56/trestly-app',
+    href: 'https://github.com/Trestly-team/trestly-app',
     label: 'GitHub',
     external: true,
   },

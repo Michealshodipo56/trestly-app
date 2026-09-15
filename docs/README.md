@@ -21,9 +21,9 @@ Trestly is split across three repos, each independently versioned and tested. Th
 
 | Repo | What it is |
 |---|---|
-| [trestly-contract](https://github.com/Michealshodipo56/trestly-contract) | The Soroban smart contract — the actual escrow logic |
-| [trestly-sdk](https://github.com/Michealshodipo56/trestly-sdk) | TypeScript client library that builds, simulates, signs, and submits transactions against the contract |
-| [trestly-app](https://github.com/Michealshodipo56/trestly-app) | The Next.js frontend — connect a wallet, create a payment, manage disputes |
+| [trestly-contract](https://github.com/Trestly-team/trestly-contract) | The Soroban smart contract — the actual escrow logic |
+| [trestly-sdk](https://github.com/Trestly-team/trestly-sdk) | TypeScript client library that builds, simulates, signs, and submits transactions against the contract |
+| [trestly-app](https://github.com/Trestly-team/trestly-app) | The Next.js frontend — connect a wallet, create a payment, manage disputes |
 
 ## Where to go next
 

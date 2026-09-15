@@ -32,7 +32,7 @@ cargo test
 
 ## SDK tests
 
-[`trestly-sdk`](https://github.com/Michealshodipo56/trestly-sdk) has its own Jest suite (`npm test`), covering transaction-building argument encoding (mocked RPC, no network) and response parsing.
+[`trestly-sdk`](https://github.com/Trestly-team/trestly-sdk) has its own Jest suite (`npm test`), covering transaction-building argument encoding (mocked RPC, no network) and response parsing.
 
 ## Frontend
 

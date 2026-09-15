@@ -4,7 +4,7 @@
 
 `stellar-cli` has a large dependency tree and a memory-hungry build/link step — on constrained machines, `cargo install --locked stellar-cli` can be enough to crash the system outright. You do not need it to deploy Trestly.
 
-[`trestly-contract/scripts/deploy-testnet.cjs`](https://github.com/Michealshodipo56/trestly-contract/blob/main/scripts/deploy-testnet.cjs) deploys using `@stellar/stellar-sdk` directly over RPC instead:
+[`trestly-contract/scripts/deploy-testnet.cjs`](https://github.com/Trestly-team/trestly-contract/blob/main/scripts/deploy-testnet.cjs) deploys using `@stellar/stellar-sdk` directly over RPC instead:
 
 ```bash
 cd trestly-contract

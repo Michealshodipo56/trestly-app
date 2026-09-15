@@ -1,6 +1,6 @@
 # Contract Reference
 
-Source: [trestly-contract](https://github.com/Michealshodipo56/trestly-contract) — `contracts/trestly/src/lib.rs`
+Source: [trestly-contract](https://github.com/Trestly-team/trestly-contract) — `contracts/trestly/src/lib.rs`
 
 Deployed testnet contract: [`CBL4JVIPQBSTGUUVQRZXHDCGCVDPN3N4MHJKKY4MZSM2ZBILIIUJR6WD`](https://stellar.expert/explorer/testnet/contract/CBL4JVIPQBSTGUUVQRZXHDCGCVDPN3N4MHJKKY4MZSM2ZBILIIUJR6WD)
 

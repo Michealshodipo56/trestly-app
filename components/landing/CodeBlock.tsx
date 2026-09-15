@@ -46,7 +46,7 @@ export function CodeBlock() {
             {copied ? 'Copied!' : 'Copy'}
           </button>
           <a
-            href="https://github.com/Michealshodipo56/trestly-sdk#readme"
+            href="https://github.com/Trestly-team/trestly-sdk#readme"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-medium text-blue-400 transition-colors hover:text-blue-300"

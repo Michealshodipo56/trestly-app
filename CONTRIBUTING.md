@@ -3,8 +3,8 @@
 Thanks for looking at this. This is the Next.js frontend for Trestly — connect
 a Freighter wallet, create an escrowed x402 payment, and manage its
 dispute/release/resolve lifecycle against the
-[trestly-contract](https://github.com/Michealshodipo56/trestly-contract)
-Soroban contract via [trestly-sdk](https://github.com/Michealshodipo56/trestly-sdk).
+[trestly-contract](https://github.com/Trestly-team/trestly-contract)
+Soroban contract via [trestly-sdk](https://github.com/Trestly-team/trestly-sdk).
 
 ## Prerequisites
 

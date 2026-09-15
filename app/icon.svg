@@ -1,37 +1,31 @@
-<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 343 303" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="trestlyBlue" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#3B9EF6" />
-      <stop offset="50%" stop-color="#2563EB" />
-      <stop offset="100%" stop-color="#1E40AF" />
+    <linearGradient id="trestly-top" x1="20" y1="16" x2="322" y2="116" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#39B0F7" />
+      <stop offset="0.48" stop-color="#2568F1" />
+      <stop offset="1" stop-color="#2119B9" />
     </linearGradient>
-    <linearGradient id="trestlyTopBar" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#3B9EF6" />
-      <stop offset="100%" stop-color="#2563EB" />
+    <linearGradient id="trestly-left" x1="41" y1="104" x2="164" y2="290" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#23B5F4" />
+      <stop offset="0.52" stop-color="#245CE2" />
+      <stop offset="1" stop-color="#182EB4" />
+    </linearGradient>
+    <linearGradient id="trestly-right" x1="180" y1="83" x2="302" y2="294" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#161269" />
+      <stop offset="0.48" stop-color="#2334C3" />
+      <stop offset="1" stop-color="#2616A8" />
+    </linearGradient>
+    <linearGradient id="trestly-accent" x1="99" y1="181" x2="257" y2="272" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1D42C7" />
+      <stop offset="1" stop-color="#3818B9" />
     </linearGradient>
   </defs>
-  
-  <!-- Top horizontal rounded bar -->
-  <path 
-    d="M 10 15 C 10 10 12 8 17 8 L 83 8 C 88 8 90 10 90 15 L 90 25 C 90 28 88 30 85 30 L 55 30 C 53 30 52 31 52 33 L 52 42 L 48 42 L 48 33 C 48 31 47 30 45 30 L 15 30 C 12 30 10 28 10 25 L 10 15 Z"
-    fill="url(#trestlyTopBar)"
-  />
-  
-  <!-- Left rounded box/shield -->
-  <path 
-    d="M 10 35 C 10 33 11 32 13 32 L 42 32 C 44 32 45 33 45 35 L 45 87 C 45 89 44 90 42 90 L 13 90 C 11 90 10 89 10 87 L 10 35 Z"
-    fill="url(#trestlyBlue)"
-  />
-  
-  <!-- Right rounded box/shield -->
-  <path 
-    d="M 55 35 C 55 33 56 32 58 32 L 87 32 C 89 32 90 33 90 35 L 90 87 C 90 89 89 90 87 90 L 58 90 C 56 90 55 89 55 87 L 55 35 Z"
-    fill="url(#trestlyBlue)"
-  />
-  
-  <!-- Center star/sparkle -->
-  <path 
-    d="M 50 40 L 52 46 L 58 46 L 53 50 L 55 56 L 50 52 L 45 56 L 47 50 L 42 46 L 48 46 Z"
-    fill="#2563EB"
-  />
+  <rect width="343" height="303" fill="white" />
+  <path d="M51 16H291C308.1 16 322 29.9 322 47V85C322 102.1 308.1 116 291 116H203C185.3 116 171 130.3 171 148V108C171 90.3 154.7 76 137 76H51C33.9 76 20 62.1 20 45.9C20 29.4 33.9 16 51 16Z" fill="url(#trestly-top)" />
+  <path d="M41 104L154 160.6V290.8C154 300.3 147.1 304.6 139.4 298.8L69.6 246.2C51.8 232.8 41 211.7 41 189.5V104Z" fill="url(#trestly-left)" />
+  <path d="M189 160.6L299 104V189.5C299 211.7 288.2 232.8 270.4 246.2L203.6 298.8C195.9 304.6 189 300.3 189 290.8V160.6Z" fill="url(#trestly-right)" />
+  <path d="M203 77L288.6 65.5C307.4 63 322 72.4 322 88.3V85C322 102.1 308.1 116 291 116H279.5L203 77Z" fill="#191579" />
+  <path d="M154 162.5L91 199C85.5 202.2 82 208.2 82 214.5V255.5L139.4 298.8C147.1 304.6 154 300.3 154 290.8V162.5Z" fill="url(#trestly-accent)" />
+  <path d="M189 162.5L252 199C257.5 202.2 261 208.2 261 214.5V255.5L203.6 298.8C195.9 304.6 189 300.3 189 290.8V162.5Z" fill="url(#trestly-accent)" />
+  <path d="M203 77L290 105L203 150Z" fill="white" />
 </svg>

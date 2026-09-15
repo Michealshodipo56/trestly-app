@@ -1,6 +1,6 @@
 # Local Setup
 
-Trestly is split across three repos (see [System Architecture](../introduction/architecture.md)). This page covers running the frontend against a deployed contract. To also build or deploy the contract locally, see [`trestly-contract`](https://github.com/Michealshodipo56/trestly-contract).
+Trestly is split across three repos (see [System Architecture](../introduction/architecture.md)). This page covers running the frontend against a deployed contract. To also build or deploy the contract locally, see [`trestly-contract`](https://github.com/Trestly-team/trestly-contract).
 
 ## Prerequisites
 
@@ -11,7 +11,7 @@ Trestly is split across three repos (see [System Architecture](../introduction/a
 ## 1. Clone and Install
 
 ```bash
-git clone https://github.com/Michealshodipo56/trestly-app.git
+git clone https://github.com/Trestly-team/trestly-app.git
 cd trestly-app
 npm install
 ```
@@ -45,17 +45,17 @@ Open [http://localhost:3000](http://localhost:3000). The app lives at `/app`.
 If you are integrating Trestly into your own agent or service rather than using the web app:
 
 ```bash
-npm install "git+https://github.com/Michealshodipo56/trestly-sdk.git#main"
+npm install "git+https://github.com/Trestly-team/trestly-sdk.git#main"
 ```
 
 See [SDK Reference](sdk-reference.md) and [x402 Integration](x402-integration.md).
 
 ## Building and deploying the contract
 
-The contract lives in [`trestly-contract`](https://github.com/Michealshodipo56/trestly-contract):
+The contract lives in [`trestly-contract`](https://github.com/Trestly-team/trestly-contract):
 
 ```bash
-git clone https://github.com/Michealshodipo56/trestly-contract.git
+git clone https://github.com/Trestly-team/trestly-contract.git
 cd trestly-contract
 cargo test
 cargo build --target wasm32v1-none --release

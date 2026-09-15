@@ -217,7 +217,7 @@ export default function LandingPage() {
                 <span aria-hidden="true">→</span>
               </Link>
               <a
-                href="https://github.com/Michealshodipo56/trestly-sdk#readme"
+                href="https://github.com/Trestly-team/trestly-sdk#readme"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center text-sm font-medium text-white/90 transition-colors hover:text-white"
