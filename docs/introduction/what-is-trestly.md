@@ -1,4 +1,4 @@
-# Trestly
+# What is Trestly
 
 Trestly adds a refund layer to [x402](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/402) — the protocol AI agents use to pay per-request for APIs and services on Stellar.
 
@@ -27,8 +27,8 @@ Trestly is split across three repos, each independently versioned and tested. Th
 
 ## Where to go next
 
-- New to the project? Start with [What is Trestly](introduction/what-is-trestly.md), [How It Works](introduction/how-it-works.md), and [System Architecture](introduction/architecture.md).
-- Want to run it locally? [Local Setup](developer/local-setup.md).
-- Looking for exact contract functions and error codes? [Contract Reference](developer/contract-reference.md).
-- Integrating the SDK into your own app or agent? [SDK Reference](developer/sdk-reference.md) and [x402 Integration](developer/x402-integration.md).
-- Evaluating this for production use? Read [Security Considerations](contract/security.md) first.
+- New to the project? Start with [How It Works](how-it-works.md) and [System Architecture](architecture.md).
+- Want to run it locally? [Local Setup](../developer/local-setup.md).
+- Looking for exact contract functions and error codes? [Contract Reference](../developer/contract-reference.md).
+- Integrating the SDK into your own app or agent? [SDK Reference](../developer/sdk-reference.md) and [x402 Integration](../developer/x402-integration.md).
+- Evaluating this for production use? Read [Security Considerations](../contract/security.md) first.

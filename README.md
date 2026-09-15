@@ -7,8 +7,9 @@ connect a wallet, create an escrowed payment, manage disputes.
 
 Trestly adds a dispute-aware escrow layer to x402 payments: instead of
 settling instantly with no way back if a service fails to deliver, funds are
-held in a Soroban contract and release automatically after a dispute
-window — or route back to the buyer if a dispute is raised in time.
+held in a Soroban contract until the dispute window closes. After that,
+anyone can submit a `release` transaction to send undisputed funds to the
+seller; a raised dispute routes the decision to the named arbiter.
 
 ## The three repos
 
@@ -34,7 +35,7 @@ Open [http://localhost:3000](http://localhost:3000). You'll need the
 free testnet XLM from [Friendbot](https://friendbot.stellar.org) to actually
 create a payment.
 
-Full walkthrough: [docs/getting-started.md](docs/getting-started.md).
+Full walkthrough: [Local Setup](docs/developer/local-setup.md).
 
 ## Scripts
 
@@ -46,15 +47,14 @@ npm run lint     # eslint
 
 ## Documentation
 
-The [`docs/`](docs/README.md) directory is the source for this project's
-GitBook documentation:
+The [`docs/`](docs/README.md) directory is the GitBook source:
 
-- [Architecture](docs/architecture.md) — how the contract, SDK, and this app fit together
-- [Getting Started](docs/getting-started.md)
-- [Contract Reference](docs/contract-reference.md)
-- [SDK Reference](docs/sdk-reference.md)
-- [Deployment](docs/deployment.md)
-- [Security](docs/security.md)
+- [What is Trestly](docs/introduction/what-is-trestly.md)
+- [System Architecture](docs/introduction/architecture.md)
+- [Using Trestly](docs/using/connecting-your-wallet.md)
+- [Developer Guide](docs/developer/local-setup.md)
+- [Contract Reference](docs/developer/contract-reference.md)
+- [SDK Reference](docs/developer/sdk-reference.md)
 
 ## Contributing
 

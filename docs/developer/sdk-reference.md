@@ -2,14 +2,11 @@
 
 Source: [trestly-sdk](https://github.com/Michealshodipo56/trestly-sdk)
 
-`trestly-sdk` is a TypeScript client library that wraps the Trestly contract
-— it builds, simulates, signs (via a callback you provide, so it isn't tied
-to any specific wallet), and submits transactions.
+`trestly-sdk` is a TypeScript client library that wraps the Trestly contract — it builds, simulates, signs (via a callback you provide, so it is not tied to any specific wallet), and submits transactions.
 
 ## Install
 
-`trestly-sdk` is not yet published to npm (see
-[Architecture](architecture.md#why-three-repos-instead-of-one)). Until then:
+`trestly-sdk` is not yet published to npm (see [System Architecture](../introduction/architecture.md)). Until then:
 
 ```bash
 npm install "git+https://github.com/Michealshodipo56/trestly-sdk.git#main"
@@ -94,28 +91,11 @@ Read-only, no signer needed.
 
 ## `wrapX402Payment`
 
-A thin, x402-flavored alias over `createPayment` — same shape, named for
-where it fits in an x402 payment flow:
-
-```ts
-import { wrapX402Payment } from "trestly-sdk";
-
-const result = await wrapX402Payment(config, {
-  payer: buyerAddress,
-  payee: sellerAddress,
-  token: usdcAddress,
-  amount: 125000000n,
-  disputeWindowSecs: 10 * 60,
-  arbiter: arbiterAddress,
-  signTransaction: async (xdr) => await freighter.signTransaction(xdr),
-});
-```
+A thin, x402-flavored alias over `createPayment` — same shape, named for where it fits in an x402 payment flow. See [x402 Integration](x402-integration.md).
 
 ## The `signTransaction` callback
 
-Every write function takes a `signTransaction: (xdr: string) => Promise<string>`
-callback rather than a private key — this is what decouples the SDK from any
-specific signer. In a browser, that's typically Freighter:
+Every write function takes a `signTransaction: (xdr: string) => Promise<string>` callback rather than a private key — this is what decouples the SDK from any specific signer. In a browser, that is typically Freighter:
 
 ```ts
 signTransaction: async (xdr) => {
@@ -139,19 +119,8 @@ signTransaction: async (xdr) => {
 }
 ```
 
-This is exactly the pattern
-[`scripts/e2e-testnet.cjs`](https://github.com/Michealshodipo56/trestly-contract/blob/main/scripts/e2e-testnet.cjs)
-in trestly-contract uses to prove the full lifecycle end-to-end without a
-browser at all.
+This is exactly the pattern [`scripts/e2e-testnet.cjs`](https://github.com/Michealshodipo56/trestly-contract/blob/main/scripts/e2e-testnet.cjs) in trestly-contract uses to prove the full lifecycle end-to-end without a browser at all.
 
 ## A note on ScVal types
 
-If you're extending the SDK (rather than just calling it), the one sharp edge
-worth knowing about: Soroban type-checks invocation arguments against the
-contract's actual interface spec, not just against TypeScript's type system.
-`payment_id` is a `u32` in the contract — encoding it as `nativeToScVal(id, {
-type: "u64" })` compiles fine in TypeScript but fails at the RPC layer with a
-type-mismatch error. This was a real bug here before (see git history on
-`src/contract.ts`); `buildRaiseDisputeParams`, `buildReleaseParams`,
-`buildResolveDisputeParams`, and `buildGetPaymentParams` all correctly use
-`u32` now.
+If you are extending the SDK (rather than just calling it), the one sharp edge worth knowing about: Soroban type-checks invocation arguments against the contract's actual interface spec, not just against TypeScript's type system. `payment_id` is a `u32` in the contract — encoding it as `nativeToScVal(id, { type: "u64" })` compiles fine in TypeScript but fails at the RPC layer with a type-mismatch error. `buildRaiseDisputeParams`, `buildReleaseParams`, `buildResolveDisputeParams`, and `buildGetPaymentParams` all correctly use `u32`.

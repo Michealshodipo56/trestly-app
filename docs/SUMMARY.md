@@ -1,9 +1,40 @@
-# Table of contents
+# Summary
 
-* [Introduction](README.md)
-* [Architecture](architecture.md)
-* [Getting Started](getting-started.md)
-* [Contract Reference](contract-reference.md)
-* [SDK Reference](sdk-reference.md)
-* [Deployment](deployment.md)
-* [Security](security.md)
+* [Trestly](README.md)
+* [Introduction](introduction/what-is-trestly.md)
+  * [What is Trestly](introduction/what-is-trestly.md)
+  * [The Problem](introduction/the-problem.md)
+  * [How It Works](introduction/how-it-works.md)
+  * [System Architecture](introduction/architecture.md)
+
+* [Core Concepts](concepts/escrowed-payments.md)
+  * [Escrowed Payments](concepts/escrowed-payments.md)
+  * [Payment States](concepts/payment-states.md)
+  * [The Dispute Window](concepts/dispute-window.md)
+  * [Arbiter Trust Model](concepts/arbiter-trust-model.md)
+
+* [Smart Contract](contract/overview.md)
+  * [Overview](contract/overview.md)
+  * [Data Model](contract/data-model.md)
+  * [Contract Functions](contract/functions.md)
+  * [Security Considerations](contract/security.md)
+
+* [Using Trestly](using/connecting-your-wallet.md)
+  * [Connecting Your Wallet](using/connecting-your-wallet.md)
+  * [Creating a Payment](using/creating-a-payment.md)
+  * [Viewing Payment Status](using/viewing-payment-status.md)
+  * [Raising a Dispute](using/raising-a-dispute.md)
+  * [Releasing Funds](using/releasing-funds.md)
+  * [Resolving a Dispute](using/resolving-a-dispute.md)
+
+* [Developer Guide](developer/local-setup.md)
+  * [Local Setup](developer/local-setup.md)
+  * [Environment Variables](developer/environment-variables.md)
+  * [Contract Reference](developer/contract-reference.md)
+  * [SDK Reference](developer/sdk-reference.md)
+  * [x402 Integration](developer/x402-integration.md)
+  * [Deployment](developer/deployment.md)
+  * [Testing](developer/testing.md)
+
+* [Contributing](contributing/how-to-contribute.md)
+  * [How to Contribute](contributing/how-to-contribute.md)
